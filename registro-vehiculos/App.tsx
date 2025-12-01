@@ -79,7 +79,7 @@ export default function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fef3c7',
+    backgroundColor: 'white',
   },
   container: {
     flex: 1,
@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#92400e',
+    color: 'black',
   },
   steps: {
     fontSize: 14,
-    color: '#78350f',
+    color: 'black',
   },
   card: {
     flex: 1,
@@ -101,6 +101,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 20,
     borderWidth: 2,
-    borderColor: '#fbbf24',
+    borderColor: '#8a8585ff',
   },
 });

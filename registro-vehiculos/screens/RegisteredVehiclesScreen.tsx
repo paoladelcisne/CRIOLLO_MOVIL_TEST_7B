@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     },
     divider: {
         height: 1,
-        backgroundColor: '#fbbf24',
+        backgroundColor: 'white',
         marginVertical: 12,
     },
     detailsContainer: {

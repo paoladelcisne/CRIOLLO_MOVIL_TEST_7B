@@ -11,9 +11,6 @@ type RegisteredVehiclesScreenProps = {
 export const RegisteredVehiclesScreen = ({ vehicles, onRegisterAnother }: RegisteredVehiclesScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Registro de un vehículo</Text>
-            <Text style={styles.subtitle}>Vehículos registrados</Text>
-
             <ScrollView style={styles.scrollContainer}>
                 {vehicles.length === 0 ? (
                     <View style={styles.emptyContainer}>
@@ -58,20 +55,6 @@ export const RegisteredVehiclesScreen = ({ vehicles, onRegisterAnother }: Regist
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f9fafb',
-        padding: 20,
-    },
-    header: {
-        fontSize: 22,
-        fontWeight: '700',
-        color: '#f59e0b',
-        marginBottom: 8,
-    },
-    subtitle: {
-        fontSize: 18,
-        fontWeight: '600',
-        color: '#f59e0b',
-        marginBottom: 20,
     },
     scrollContainer: {
         flex: 1,
@@ -87,12 +70,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     vehicleCard: {
-        backgroundColor: 'white',
-        borderRadius: 12,
+        backgroundColor: '#fef3c7',
+        borderRadius: 8,
         padding: 16,
         marginBottom: 16,
-        borderWidth: 2,
-        borderColor: '#16a34a',
+        borderWidth: 1,
+        borderColor: '#fbbf24',
     },
     headerRow: {
         flexDirection: 'row',
@@ -101,7 +84,7 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 12,
-        color: '#6b7280',
+        color: '#78350f',
         fontWeight: '600',
         flex: 1,
         textAlign: 'center',
@@ -120,7 +103,7 @@ const styles = StyleSheet.create({
     },
     divider: {
         height: 1,
-        backgroundColor: '#d1d5db',
+        backgroundColor: '#fbbf24',
         marginVertical: 12,
     },
     detailsContainer: {
@@ -128,6 +111,6 @@ const styles = StyleSheet.create({
     },
     detailText: {
         fontSize: 14,
-        color: '#374151',
+        color: '#78350f',
     }
 })

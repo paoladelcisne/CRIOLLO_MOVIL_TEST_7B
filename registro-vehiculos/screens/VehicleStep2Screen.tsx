@@ -16,57 +16,52 @@ export const VehicleStep2Screen = ({ vehicle, onChange, onNext, onBack }: Vehicl
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Registro de un vehículo</Text>
-            <Text style={styles.step}>Paso 2 de 3</Text>
+            <Text style={styles.title}>Detalle del vehículo</Text>
 
-            <View style={styles.formContainer}>
-                <Text style={styles.title}>Detalle del vehículo</Text>
+            <FormInput
+                label="Placa"
+                placeholder="Ingresa la placa"
+                value={vehicle.placa}
+                onChangeText={value => onChange('placa', value)}
+            />
 
-                <FormInput
-                    label="Placa"
-                    placeholder="Ingresa la placa"
-                    value={vehicle.placa}
-                    onChangeText={value => onChange('placa', value)}
-                />
+            <FormInput
+                label="Nombre del dueño"
+                placeholder="Ingresa el nombre del dueño"
+                value={vehicle.nombreDueno}
+                onChangeText={value => onChange('nombreDueno', value)}
+            />
 
-                <FormInput
-                    label="Nombre del dueño"
-                    placeholder="Ingresa el nombre del dueño"
-                    value={vehicle.nombreDueno}
-                    onChangeText={value => onChange('nombreDueno', value)}
-                />
+            <FormInput
+                label="Año"
+                placeholder="Ingresa el año"
+                value={vehicle.ano}
+                keyboardType="numeric"
+                onChangeText={value => onChange('ano', value)}
+            />
 
-                <FormInput
-                    label="Año"
-                    placeholder="Ingresa el año"
-                    value={vehicle.ano}
-                    keyboardType="numeric"
-                    onChangeText={value => onChange('ano', value)}
-                />
+            <FormInput
+                label="Tipo de gasolina"
+                placeholder="Ej: Super, Extra, Diesel"
+                value={vehicle.tipoGasolina}
+                onChangeText={value => onChange('tipoGasolina', value)}
+            />
 
-                <FormInput
-                    label="Tipo de gasolina"
-                    placeholder="Ej: Super, Extra, Diesel"
-                    value={vehicle.tipoGasolina}
-                    onChangeText={value => onChange('tipoGasolina', value)}
-                />
-
-                <View style={styles.buttonContainer}>
-                    <View style={styles.buttonHalf}>
-                        <FormButton
-                            label="Regresar"
-                            onPress={onBack}
-                            variant="secondary"
-                        />
-                    </View>
-                    <View style={styles.buttonHalf}>
-                        <FormButton
-                            label="Continuar"
-                            onPress={onNext}
-                            disabled={isDisabled}
-                            style={isDisabled && styles.disabledButton}
-                        />
-                    </View>
+            <View style={styles.buttonContainer}>
+                <View style={styles.buttonHalf}>
+                    <FormButton
+                        label="Regresar"
+                        onPress={onBack}
+                        variant="secondary"
+                    />
+                </View>
+                <View style={styles.buttonHalf}>
+                    <FormButton
+                        label="Continuar"
+                        onPress={onNext}
+                        disabled={isDisabled}
+                        style={isDisabled && styles.disabledButton}
+                    />
                 </View>
             </View>
         </View>
@@ -76,26 +71,6 @@ export const VehicleStep2Screen = ({ vehicle, onChange, onNext, onBack }: Vehicl
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f9fafb',
-        padding: 20,
-    },
-    header: {
-        fontSize: 22,
-        fontWeight: '700',
-        color: '#f59e0b',
-        marginBottom: 8,
-    },
-    step: {
-        fontSize: 16,
-        color: '#6b7280',
-        marginBottom: 24,
-    },
-    formContainer: {
-        backgroundColor: 'white',
-        borderRadius: 12,
-        padding: 20,
-        borderWidth: 2,
-        borderColor: '#fbbf24',
     },
     title: {
         fontSize: 18,

@@ -12,35 +12,30 @@ type SummaryScreenProps = {
 export const SummaryScreen = ({ vehicle, onRegister, onBack }: SummaryScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Registro de un vehículo</Text>
-            <Text style={styles.step}>Paso 3 de 3</Text>
+            <Text style={styles.title}>Resumen de registro</Text>
 
-            <View style={styles.formContainer}>
-                <Text style={styles.title}>Resumen de registro</Text>
+            <View style={styles.card}>
+                <Text style={styles.row}>Marca: {vehicle.marca}</Text>
+                <Text style={styles.row}>Modelo: {vehicle.modelo}</Text>
+                <Text style={styles.row}>Placa: {vehicle.placa}</Text>
+                <Text style={styles.row}>Nombre dueño: {vehicle.nombreDueno}</Text>
+                <Text style={styles.row}>Año: {vehicle.ano}</Text>
+                <Text style={styles.row}>Tipo de gasolina: {vehicle.tipoGasolina}</Text>
+            </View>
 
-                <View style={styles.card}>
-                    <Text style={styles.row}>Marca: {vehicle.marca}</Text>
-                    <Text style={styles.row}>Modelo: {vehicle.modelo}</Text>
-                    <Text style={styles.row}>Placa: {vehicle.placa}</Text>
-                    <Text style={styles.row}>Nombre dueño: {vehicle.nombreDueno}</Text>
-                    <Text style={styles.row}>Año: {vehicle.ano}</Text>
-                    <Text style={styles.row}>Tipo de gasolina: {vehicle.tipoGasolina}</Text>
+            <View style={styles.buttonContainer}>
+                <View style={styles.buttonHalf}>
+                    <FormButton
+                        label="Regresar"
+                        onPress={onBack}
+                        variant="secondary"
+                    />
                 </View>
-
-                <View style={styles.buttonContainer}>
-                    <View style={styles.buttonHalf}>
-                        <FormButton
-                            label="Regresar"
-                            onPress={onBack}
-                            variant="secondary"
-                        />
-                    </View>
-                    <View style={styles.buttonHalf}>
-                        <FormButton
-                            label="Registrar"
-                            onPress={onRegister}
-                        />
-                    </View>
+                <View style={styles.buttonHalf}>
+                    <FormButton
+                        label="Registrar"
+                        onPress={onRegister}
+                    />
                 </View>
             </View>
         </View>
@@ -50,26 +45,6 @@ export const SummaryScreen = ({ vehicle, onRegister, onBack }: SummaryScreenProp
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f9fafb',
-        padding: 20,
-    },
-    header: {
-        fontSize: 22,
-        fontWeight: '700',
-        color: '#f59e0b',
-        marginBottom: 8,
-    },
-    step: {
-        fontSize: 16,
-        color: '#6b7280',
-        marginBottom: 24,
-    },
-    formContainer: {
-        backgroundColor: 'white',
-        borderRadius: 12,
-        padding: 20,
-        borderWidth: 2,
-        borderColor: '#fbbf24',
     },
     title: {
         fontSize: 18,

@@ -15,33 +15,28 @@ export const VehicleStep1Screen = ({ vehicle, onChange, onNext }: VehicleStep1Sc
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Registro de un vehículo</Text>
-            <Text style={styles.step}>Paso 1 de 3</Text>
+            <Text style={styles.title}>Datos del vehículo</Text>
 
-            <View style={styles.formContainer}>
-                <Text style={styles.title}>Datos del vehículo</Text>
+            <FormInput
+                label="Marca"
+                placeholder="Ingresa la marca"
+                value={vehicle.marca}
+                onChangeText={value => onChange('marca', value)}
+            />
 
-                <FormInput
-                    label="Marca"
-                    placeholder="Ingresa la marca"
-                    value={vehicle.marca}
-                    onChangeText={value => onChange('marca', value)}
-                />
+            <FormInput
+                label="Modelo"
+                placeholder="Ingresa el modelo"
+                value={vehicle.modelo}
+                onChangeText={value => onChange('modelo', value)}
+            />
 
-                <FormInput
-                    label="Modelo"
-                    placeholder="Ingresa el modelo"
-                    value={vehicle.modelo}
-                    onChangeText={value => onChange('modelo', value)}
-                />
-
-                <FormButton
-                    label="Continuar"
-                    onPress={onNext}
-                    disabled={isDisabled}
-                    style={isDisabled && styles.disabledButton}
-                />
-            </View>
+            <FormButton
+                label="Continuar"
+                onPress={onNext}
+                disabled={isDisabled}
+                style={isDisabled && styles.disabledButton}
+            />
         </View>
     );
 }
@@ -49,26 +44,6 @@ export const VehicleStep1Screen = ({ vehicle, onChange, onNext }: VehicleStep1Sc
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f9fafb',
-        padding: 20,
-    },
-    header: {
-        fontSize: 22,
-        fontWeight: '700',
-        color: '#f59e0b',
-        marginBottom: 8,
-    },
-    step: {
-        fontSize: 16,
-        color: '#6b7280',
-        marginBottom: 24,
-    },
-    formContainer: {
-        backgroundColor: 'white',
-        borderRadius: 12,
-        padding: 20,
-        borderWidth: 2,
-        borderColor: '#fbbf24',
     },
     title: {
         fontSize: 18,
